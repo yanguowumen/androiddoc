@@ -1,0 +1,46 @@
+pm list packages [option] [要过滤的package]
+-f 显示包名安装文件位置
+-d 显示被禁用的应用的包名
+-s 显示系统应用的包名
+-3 显示第三方应用的包名
+-e 显示可用应用的包名 
+-i 显示包名及应用安装者 非应用安装则为null
+
+pm list permissions [option] [要过滤的group]
+
+-g 分组列出权限
+-d 显示dangerous权限
+-f 打印所有信息 
+-d 打印摘要信息
+-u 只有权限的用户看到的列表 用户自定义权限
+
+组合使用 pm list permissions -d -f
+pm list permission-groups
+
+
+授权和取消
+注意：目标apk的minSdkVersion、targetSdkVersion也必需为23及以上
+授权
+pm grant 包名 权限 注意该权限必须是应用已经在maninifest中申请的权限
+取消权限
+pm revoke 包名 权限 注意该权限必须是应用已经在maninifest中申请的权限
+
+
+测试包
+pm list instrumentation 无参数 列出所有的instrumentation测试包 
+-f 列出apk文件位置 
+<target_package> 列出某个app的测试包 
+
+
+路径
+pm path 包名 打印指定应用的apk路径
+
+
+系统功能与支持库查询
+pm list feature 打印系统的所有功能 
+
+列出所有硬件相关信息 
+pm list libraries 打印当前设备所支持的所有库 
+
+
+
